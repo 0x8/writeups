@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+# Nullp0inter's dear_diary solution
+# <3 thx bt, duck, thwam, and whoever wrote the FSV presentation
+# for us back in 2008
+
 from pwn import *
 
 # Uncomment to make remote
