@@ -24,7 +24,7 @@ Thats a bit odd for a diary, just one entry. After playing around a little
 bit process of elemination shows the program does not allow specifically "n",
 that is to say the lowercase (uppercase is fine), which is undoubtedly also
 strange behavior. My mind is already screaming Format String Vulnerability
-but just to verify I tried to enter 'AAAA%x%x%x%x%x%x%x' as an entry and
+but just to verify I tried to enter `AAAA%x%x%x%x%x%x%x` as an entry and
 print it:
 ```
 -- Diary 3000 --
