@@ -264,4 +264,4 @@ There it is! The flag is `IceCTF{this_thing_is_just_sitting_here}`
 
 
 ##Special Thanks:
-I would like the thank duck, bt, thwam, and whoever wrote our clubs Format String Vulnerability presentation back in 2008. The guidance and knowledge I gained from everyone over the course of this challenge is invaluable. I learned so much about stack structure, format strings, format string exploits, and even pwntools over the course of this challenge.
+Special thanks to both past and present members of my club, wcsc, who helped me out with this whether directly or otherwise. The support and information I gained while solving this challenge has been invaluable.
