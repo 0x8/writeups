@@ -40,22 +40,23 @@ Vuole lasciare un messaggio?
 
 YISSS, a core dump, lets examine that in gdb:
 
-```
+```bash
 Stopped reason: SIGSEGV
 0x44444444 in ?? ()
 ```
 Awesome! It looks like we overwrote EIP, now we can generate a string with `ragg2` to take the guesswork (or real reversing) out of figuring out the buffer size:
-```zsh
+```bash
 ragg2 -P 100 -r
 AAABAACAADAAEAAFAAGAAHAAIAAJAAKAALAAMAANAAOAAPAAQAARAASAATAAUAAVAAWAAXAAYAAZAAaAAbAAcAAdAAeAAfAAgAA
 ```
 Using the string ragg2 generated:
-```
+```bash
 Stopped reason: SIGSEGV
 0x41415041 in ?? ()
 ```
 Translating that to an ASCII string we get 'AAPA'. There are two ways to do this now which are either copying the string right up to the first A and using something like len() in Python, but I'm going to use a builtin tool for radare2, `wopO <hex pattern>` which will basically search for how far off that pattern is in the string we generated:
-```
+```bash
+r2 ropi
  -- This is amazing ...
  [0x08048430]> wopO 0x41415041
  43
