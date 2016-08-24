@@ -150,7 +150,7 @@ Luckily for us, pwntools makes sending these multiple encoded payloads really ea
 #!/usr/bin/python
 
 # @nullp0inter
-# IcecTF ROPI
+# IceCTF ROPI
 
 from pwn import *
 
