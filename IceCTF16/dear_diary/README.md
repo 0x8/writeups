@@ -2,11 +2,13 @@
 
 ##Dear_Diary Pwn 60pts
 We all want to keep our secrets secure and what is more important than our precious diary entries? We made this highly secure diary service that is sure to keep all your boy crushes and edgy poems safe from your parents. 
+
 nc diary.vuln.icec.tf 6501
 
 ## Write Up
 In this challenge we are given a download link for a elf-32bit binary. The
-idea is that this binary acts as a diary of sorts, allowing you to write an
+idea is that this binary acts as a diary of sorts, allowing you to write an entry,
+print the LATEST entry only, or quit.
 
 ```
 -- Diary 3000 --
@@ -16,9 +18,19 @@ idea is that this binary acts as a diary of sorts, allowing you to write an
 3. quit
 > 
 ```
+I began by playing around and quickly found that the diary program would occasionally exit right after your entry and print 'rude!' like so:
+```
+-- Diary 3000 --
 
+1. add entry
+2. print latest entry
+3. quit
+> 1 
+Tell me all your secrets: never gonna give you up, never gonna let you down 
+rude!
+```
 
-Thats a bit odd for a diary, just one entry. After playing around a little bit process of elemination shows the program does not allow specifically "n", that is to say the lowercase (uppercase is fine), which is undoubtedly also strange behavior. My mind is already screaming Format String Vulnerability but just to verify I tried to enter `AAAA%x%x%x%x%x%x%x` as an entry and
+Thats a bit odd for a diary, just one entry and calling you rude as well. After playing around a little bit process of elemination shows the program does not allow specifically "n", that is to say the lowercase (uppercase is fine), which is undoubtedly also strange behavior. My mind is already screaming Format String Vulnerability but just to verify I tried to enter `AAAA%x%x%x%x%x%x%x` as an entry and
 print it:
 ```
 -- Diary 3000 --
