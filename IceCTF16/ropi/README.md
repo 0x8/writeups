@@ -1,4 +1,4 @@
-#Nullo0inter's ropi write up for IceCTF 2016
+#Nullp0inter's ropi write up for IceCTF 2016
 
 ##Ropi Pwn 75pts
 Ritorno orientata programmazione 
