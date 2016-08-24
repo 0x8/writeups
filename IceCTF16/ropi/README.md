@@ -193,9 +193,7 @@ payload     += p32(ret_addr)
 
 
 ##Special Thanks:
-Once again I would love to thank the wonderful members (both past and present) of my club, wcsc, who helped me understand a lot of what was going on in this challenge and reach the solution. I learned a lot about return oriented programming along the way.
-
-I also want to thank the creators at IceCTF for putting this challenge out there and making me spend hours and hours in gdb, making me fairly proficient with it now.
+Special thanks to members both past and present of my club, wcsc, for all the information they shared with me. I was able to finally solve some fairly difficult challenges thanks to them answering my repeated stupid questions (ropi at 131 solves, dear_diary at 78)
 
 ##Resources:
 I found a ton of great resources during the challenge for learning about ROP attacks:
