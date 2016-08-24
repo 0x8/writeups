@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # @nullp0inter
-# IcecTF ROPI
+# IceCTF ROPI
 
 from pwn import *
 
