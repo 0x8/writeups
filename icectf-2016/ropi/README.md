@@ -1,6 +1,6 @@
-#Nullp0inter's ropi write up for IceCTF 2016
+# Nullp0inter's ropi write up for IceCTF 2016
 
-##Ropi Pwn 75pts
+## Ropi Pwn 75pts
 Ritorno orientata programmazione 
 nc.ropi.vuln.icec.tf 6500
 
@@ -66,7 +66,7 @@ r2 ropi
 
 Disassembling with IDA we get the following functions:
 
-#####main:
+##### main:
 ```C
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
@@ -76,7 +76,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 }
 ```
 
-#####ezy:
+##### ezy:
 ```C
 ssize_t ezy()
 {
@@ -88,7 +88,7 @@ ssize_t ezy()
 }
 ```
 
-#####ret:
+##### ret:
 ```C
 int __cdecl ret(int a1)
 {
@@ -103,7 +103,7 @@ int __cdecl ret(int a1)
 }
 ```
 
-#####ori:
+##### ori:
 ```C
 int __cdecl ori(int a1, int a2)
 {
@@ -118,7 +118,7 @@ int __cdecl ori(int a1, int a2)
 }
 ```
 
-#####pro:
+##### pro:
 ```C
 int pro()
 {
@@ -193,10 +193,10 @@ payload     += p32(ret_addr)
 ```
 
 
-##Special Thanks:
+## Special Thanks:
 Special thanks to members both past and present of my club, wcsc, for all the information they shared with me. I was able to finally solve some fairly difficult challenges thanks to them answering my repeated stupid questions (ropi at 131 solves, dear_diary at 78)
 
-##Resources:
+## Resources:
 I found a ton of great resources during the challenge for learning about ROP attacks:
 
 [Saumil Shah's 'Dive Into ROP'](http://www.slideshare.net/saumilshah/dive-into-rop-a-quick-introduction-to-return-oriented-programming "Dive Into ROP")
