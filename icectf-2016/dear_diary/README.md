@@ -1,6 +1,6 @@
-#Nullp0inter's dear_diary write up for IceCTF 2016
+# Nullp0inter's dear_diary write up for IceCTF 2016
 
-##Dear_Diary Pwn 60pts
+## Dear_Diary Pwn 60pts
 We all want to keep our secrets secure and what is more important than our precious diary entries? We made this highly secure diary service that is sure to keep all your boy crushes and edgy poems safe from your parents. 
 
 nc diary.vuln.icec.tf 6501
@@ -57,7 +57,7 @@ Clearly its not handling format strings properly according to the output above. 
 
 According to IDA we have the following functions:
 
-#####main:
+##### main:
 ```C
 int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
 {
@@ -106,7 +106,7 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
 }
 ```
 
-#####print_menu:
+##### print_menu:
 ```C
 int print_menu()
 {
@@ -118,7 +118,7 @@ int print_menu()
 }
 ```
 
-#####add_entry:
+##### add_entry:
 ```C
 int __cdecl add_entry(char *a1)
 {
@@ -136,7 +136,7 @@ int __cdecl add_entry(char *a1)
 }
 ```
 
-#####print_entry:
+##### print_entry:
 ```C
 int __cdecl print_entry(const char *a1)
 {
@@ -148,7 +148,7 @@ int __cdecl print_entry(const char *a1)
 }
 ```
 
-#####flag:
+##### flag:
 ```C
 int flag()
 {
@@ -263,5 +263,5 @@ Tell me all your secrets:
 There it is! The flag is `IceCTF{this_thing_is_just_sitting_here}`
 
 
-##Special Thanks:
+## Special Thanks:
 Special thanks to both past and present members of my club, wcsc, who helped me out with this whether directly or otherwise. The support and information I gained while solving this challenge has been invaluable.
